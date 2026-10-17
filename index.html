@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <div class="logo">₹</div>
+        <div>
+            <h1>My Expense Tracker</h1>
+            <p>Take control of your money</p>
+        </div>
+    </div>
+    <span class="today">Personal Finance</span>
+</header>
+
+<main class="container">
+
+    <section class="welcome">
+        <p class="eyebrow">YOUR MONEY, YOUR CONTROL</p>
+        <h2>Welcome back! 👋</h2>
+        <p>Track your income and expenses in one place.</p>
+    </section>
+
+    <section class="summary">
+        <article class="summary-card balance-card">
+            <p>Total Balance</p>
+            <h2>₹{{BALANCE}}</h2>
+            <span>Income minus expenses</span>
+        </article>
+
+        <article class="summary-card">
+            <p>Total Income</p>
+            <h2 class="income">+₹{{INCOME}}</h2>
+            <span>Money received</span>
+        </article>
+
+        <article class="summary-card">
+            <p>Total Expenses</p>
+            <h2 class="expense">-₹{{EXPENSES}}</h2>
+            <span>Money spent</span>
+        </article>
+    </section>
+
+    <section class="content-grid">
+
+        <article class="panel">
+            <div class="panel-heading">
+                <h2>Add Transaction</h2>
+                <span class="heading-icon">＋</span>
+            </div>
+
+            <p class="muted">Enter the details below.</p>
+
+            <form action="/add" method="POST" class="expense-form">
+
+                <label for="description">Description</label>
+                <input
+                    id="description"
+                    name="description"
+                    type="text"
+                    maxlength="100"
+                    placeholder="e.g. Lunch or monthly salary"
+                    required
+                >
+
+                <label for="amount">Amount (₹)</label>
+                <input
+                    id="amount"
+                    name="amount"
+                    type="number"
+                    min="0.01"
+                    step="0.01"
+                    placeholder="Enter amount"
+                    required
+                >
+
+                <label for="kind">Transaction Type</label>
+                <select id="kind" name="kind" required>
+                    <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                </select>
+
+                <label for="category">Category</label>
+                <select id="category" name="category" required>
+                    <option value="Food">Food</option>
+                    <option value="Travel">Travel</option>
+                    <option value="Shopping">Shopping</option>
+                    <option value="Bills">Bills</option>
+                    <option value="Education">Education</option>
+                    <option value="Salary">Salary</option>
+                    <option value="Other">Other</option>
+                </select>
+
+                <label for="date">Date</label>
+                <input
+                    id="date"
+                    name="date"
+                    type="date"
+                    value="{{TODAY}}"
+                    required
+                >
+
+                <button type="submit" class="add-btn">
+                    Add Transaction
+                </button>
+            </form>
+        </article>
+
+        <article class="panel history-panel">
+            <div class="panel-heading">
+                <h2>Transaction History</h2>
+                <span class="history-label">Recent activity</span>
+            </div>
+
+            <p class="muted">Your saved transactions appear here.</p>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {{TRANSACTIONS}}
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+    </section>
+
+    <footer>
+        Made with Python, HTML and CSS 💜
+    </footer>
+
+</main>
+
+</body>
+</html>

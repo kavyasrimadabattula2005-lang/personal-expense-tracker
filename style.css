@@ -1,0 +1,301 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f8f6ff;
+    color: #302b40;
+}
+
+.topbar {
+    background: white;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee8fa;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 14px;
+    display: grid;
+    place-items: center;
+    background: #7559c9;
+    color: white;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.brand h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.brand p {
+    margin: 5px 0 0;
+    color: #89839a;
+    font-size: 13px;
+}
+
+.today {
+    background: #f0eaff;
+    color: #6d51b7;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1250px;
+    margin: 35px auto;
+}
+
+.welcome {
+    margin-bottom: 25px;
+}
+
+.eyebrow {
+    color: #8065ca;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.welcome h2 {
+    margin: 10px 0;
+    font-size: 30px;
+}
+
+.welcome > p:last-child,
+.muted {
+    color: #89839a;
+    font-size: 14px;
+}
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.summary-card {
+    background: white;
+    padding: 24px;
+    border-radius: 18px;
+    border: 1px solid #eee8fa;
+    box-shadow: 0 5px 20px #4d367008;
+}
+
+.balance-card {
+    background: linear-gradient(135deg, #775cc8, #a18be7);
+    color: white;
+}
+
+.summary-card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.summary-card h2 {
+    margin: 15px 0 10px;
+    font-size: 28px;
+    overflow-wrap: anywhere;
+}
+
+.summary-card span {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.income {
+    color: #25966c;
+}
+
+.expense {
+    color: #d85b79;
+}
+
+.content-grid {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+}
+
+.panel {
+    background: white;
+    padding: 24px;
+    border: 1px solid #eee8fa;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #4d367008;
+    min-width: 0;
+}
+
+.panel-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.panel-heading h2 {
+    margin: 0;
+    font-size: 19px;
+}
+
+.heading-icon {
+    background: #f0eaff;
+    color: #7559c9;
+    border-radius: 10px;
+    padding: 8px 12px;
+}
+
+.history-label {
+    color: #8065ca;
+    font-size: 12px;
+}
+
+.expense-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 22px;
+}
+
+.expense-form label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.expense-form input,
+.expense-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e6e0f1;
+    border-radius: 9px;
+    background: #fdfcff;
+    color: #302b40;
+    font: inherit;
+    font-size: 14px;
+}
+
+.expense-form input:focus,
+.expense-form select:focus {
+    outline: 2px solid #c6b5f3;
+    border-color: #8c72d5;
+}
+
+.add-btn {
+    border: none;
+    background: #7559c9;
+    color: white;
+    padding: 14px;
+    margin-top: 12px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background: #6045b0;
+}
+
+.table-wrap {
+    overflow-x: auto;
+    margin-top: 22px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 13px;
+}
+
+th {
+    background: #f8f5ff;
+    color: #777087;
+    font-weight: bold;
+}
+
+th,
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f0edf6;
+    white-space: nowrap;
+}
+
+.delete-btn {
+    background: #fff0f3;
+    color: #c34866;
+    border: none;
+    border-radius: 7px;
+    padding: 7px 10px;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background: #ffdee6;
+}
+
+.empty {
+    text-align: center;
+    color: #89839a;
+    padding: 30px;
+}
+
+footer {
+    text-align: center;
+    color: #89839a;
+    padding: 30px 0 10px;
+    font-size: 13px;
+}
+
+@media (max-width: 900px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 650px) {
+    .topbar {
+        padding: 16px 5%;
+    }
+
+    .today {
+        display: none;
+    }
+
+    .container {
+        width: 92%;
+        margin-top: 25px;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .welcome h2 {
+        font-size: 25px;
+    }
+
+    .panel {
+        padding: 18px;
+    }
+}
